@@ -46,10 +46,8 @@ class SQLiteStorePipeline(object):
 
     def process_item(self, item, spider):
         try:
-            self.conn.execute('insert into duckduckgo values(?,?,?)',
-                              (item['cnpj'], item['url'], item['name'],))
-            self.conn.execute('update inputsc set status=200 where cnpj=?',
-                              (item['cnpj'],))
+            self.conn.execute('insert into proxyurls (url) values (?)',
+                              (item['url'],))
             self.conn.commit()
         except sqlite3.Error as e:
             spider.logger.info('Failed to insert item {}'.format(e.args[0]))

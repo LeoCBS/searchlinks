@@ -28,7 +28,7 @@ HTTP_PROXY = 'http://192.168.0.106:8123'
 
 DOWNLOADER_MIDDLEWARES = {
      'searchlinks.middlewares.RandomUserAgentMiddleware': 400,
-     'searchlinks.middlewares.ProxyMiddleware': 410,
+     #'searchlinks.middlewares.ProxyMiddleware': 410,
      'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': None
     # Disable compression middleware, so the actual HTML pages are cached
 }
@@ -44,12 +44,12 @@ ITEM_PIPELINES = {
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 50
+CONCURRENT_REQUESTS = 1
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 4
+DOWNLOAD_DELAY = 2
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
