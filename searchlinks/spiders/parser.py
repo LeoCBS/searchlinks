@@ -8,8 +8,9 @@ def get_links(body):
         'div',
         {'class': 'links_main links_deep result__body'}
     )
-    links = []
+    outputs = []
     for d in divs_result:
+        print(d.find('a', {'class': 'result__snippet'}))
         a = d.find('a', {'class': 'result__a'})
-        links.append(a['href'])
-    return links
+        outputs.append({'url': a['href']})
+    return outputs
