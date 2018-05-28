@@ -28,7 +28,7 @@ HTTP_PROXY = 'http://192.168.0.106:8123'
 
 DOWNLOADER_MIDDLEWARES = {
      'searchlinks.middlewares.RandomUserAgentMiddleware': 400,
-     #'searchlinks.middlewares.ProxyMiddleware': 410,
+     'searchlinks.middlewares.ProxyMiddleware': 410,
      'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': None
     # Disable compression middleware, so the actual HTML pages are cached
 }
@@ -37,7 +37,7 @@ MONGO_URI='mongodb://192.168.0.106:27017'
 MONGO_DATABASE='searchlinks'
 
 ITEM_PIPELINES = {
-    'searchlinks.pipelines.SQLiteStorePipeline': 300,
+    #'searchlinks.pipelines.SQLiteStorePipeline': 300,
 }
 
 # Obey robots.txt rules
