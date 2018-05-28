@@ -15,7 +15,7 @@ headers = {
     'Upgrade-Insecure-Requests': '1',
 }
 
-MAX_PAGES = 5
+MAX_PAGES = 1
 
 
 def write_response_body(body):
@@ -33,7 +33,7 @@ class DuckduckgoSpider(scrapy.Spider):
 
     def start_requests(self):
         self.pages_count = 0
-        q = getattr(self, 'q', None)
+        q = getattr(self, 'query', None)
         body = self.body_tmp.format(q)
         yield scrapy.Request(
             method="POST",
